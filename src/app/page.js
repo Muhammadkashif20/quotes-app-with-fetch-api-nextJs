@@ -1,19 +1,19 @@
-import Link from "next/link"
-import QuotesCard from "./components/quotesCard"
-const page = async () => {
+import React from 'react'
+import QuoteCards from './Components/QuoteCards'
+import Link from 'next/link'
+const page = async()  => {
   let quotes= await fetch('https://dummyjson.com/quotes')
-  quotes= await quotes.json()
-console.log('quotes=>',quotes);
+  quotes=await quotes.json()
+  console.log('quotesFetch=>',quotes);
+  
   return (
     <div>
-      <h1 className="font-bold text-center text-2xl">Quotes App</h1>
-      {quotes.map((data)=>{
-        return(
-          <div>
-            <QuotesCard/>
-          </div>
-        )
-      })}
+      <h1 className='text-center text-3xl font-semibold my-10'>Quotes App 📑</h1>
+    {quotes.quotes.map((data)=> 
+    <Link key={data.id} href={`/quote/${data.id}`}>
+    <QuoteCards key={data.id} author={data.author} quote={data.quote}/>
+    </Link>
+    )}
     </div>
   )
 }
