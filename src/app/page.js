@@ -1,5 +1,5 @@
 import React from 'react'
-import QuoteCards from './Components/QuoteCards'
+import QuoteCards from './Components/quote/QuoteCards'
 import Link from 'next/link'
 const page = async()  => {
   let quotes= await fetch('https://dummyjson.com/quotes')
@@ -10,6 +10,7 @@ const page = async()  => {
     <div>
       <h1 className='text-center text-3xl font-semibold my-10'>Quotes App 📑</h1>
     {quotes.quotes.map((data)=> 
+  
     <Link key={data.id} href={`/quote/${data.id}`}>
     <QuoteCards key={data.id} author={data.author} quote={data.quote}/>
     </Link>
