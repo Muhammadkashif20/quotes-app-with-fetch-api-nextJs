@@ -12,7 +12,6 @@ const page = async()  => {
     <div>
       <h1 className='text-center text-3xl font-semibold my-10'>Quotes App 📑</h1>
     {quotes.quotes.map((data)=> 
-
     <Link key={data.id} href={`/quote/${data.id}`}>
     <QuoteCards key={data.id} author={data.author} quote={data.quote}/>
     </Link>
