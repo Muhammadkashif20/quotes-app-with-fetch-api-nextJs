@@ -2,10 +2,10 @@ import React from 'react'
 import QuoteCards from './Components/quotes/QuoteCards'
 import Link from 'next/link'
 const page = async()  => {
-  let quotes= await fetch('https://dummyjson.com/Quotes')
+  let quotes= await fetch('https://dummyjson.com/Quotess')
   quotes=await quotes.json()
   console.log('quotesFetch=>',quotes);
-  if(!quotes.ok){
+  if(quotes.ok){
     throw new Error('Api Not Found')
   }
   return (
