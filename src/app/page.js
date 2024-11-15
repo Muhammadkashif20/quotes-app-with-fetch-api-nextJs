@@ -5,9 +5,7 @@ const page = async()  => {
   let quotes= await fetch('https://dummyjson.com/Quotes')
   quotes=await quotes.json()
   console.log('quotesFetch=>',quotes);
-  if(quotes.ok){
-    throw new Error('Api Not Found')
-  }
+
   return (
     <div>
       <h1 className='text-center text-3xl font-semibold my-10'>Quotes App 📑</h1>
