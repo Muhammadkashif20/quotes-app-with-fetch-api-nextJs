@@ -2,7 +2,7 @@ import React from 'react'
 import QuoteCards from './Components/quotes/QuoteCards'
 import Link from 'next/link'
 const page = async()  => {
-  let quotes= await fetch('https://dummyjson.com/Quotess')
+  let quotes= await fetch('https://dummyjson.com/Quotes')
   quotes=await quotes.json()
   console.log('quotesFetch=>',quotes);
   if(quotes.ok){
